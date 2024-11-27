@@ -152,31 +152,27 @@
     </section>
     
     <section id="donate">
-        <h2>تبرع لجمعيتنا</h2>
-        <p>ساهم في دعم مشاريعنا الخيرية وكن جزءًا من التغيير!</p>
-        <form action="/submit-donation" method="POST">
-            <label for="amount">المبلغ (أوقية قديمة):</label>
-            <input type="number" id="amount" name="amount" required>
-            
-            <label for="payment-method">طريقة الدفع:</label>
-            <select id="payment-method" name="payment-method" required>
-                <option value="bankia">تطبيق بنكيلي</option> <!-- خيار بنكيلي فقط -->
-            </select>
-            <select id="payment-method" name="payment-method" required>
-                <option value="bankia">تطبيق مصرفي </option> <!-- خيار بنكيلي فقط -->
-            </select>
-            
-            <button type="submit">تبرع الآن</button>
-        </form>
+       <h1>تبرع لجمعيتنا</h1>
+<p>ساهم في دعم مشاريعنا الخيرية وكن جزءًا من التغيير!</p>
+<form>
+    <label for="amount">المبلغ (أوقية قديمة):</label>
+    <input type="text" id="amount" name="amount" required>
+    <br><br>
+    <label for="payment-method">طريقة الدفع:</label>
+    <select id="payment-method" name="payment-method" required>
+        <option value="bankly">تطبيق بنكيلي</option>
+        <option value="masrafi">تطبيق مصرفي</option>
+        <option value="bim">تطبيق بيم باك</option>
+        <option value="amanati">تطبيق أمانتي</option>
+        <option value="click">تطبيق كليك</option>
+    </select>
+    <br><br>
+    <button type="button" onclick="document.getElementById('account-details').style.display='block'">تبرع الآن</button>
+</form>
+<div id="account-details" style="display:none;">
     
-        <!-- تعليمات الدفع عبر تطبيق بنكيا -->
-        <div id="bankia-info">
-            <h3>للتبرع عبر تطبيقات البنكيه</h3>
-            <p>يرجى استخدام تطبيق (بنكيلي + مصرفي + بيم بانك +كليك +أمانتي )على هاتفك لإرسال المبلغ إلى الرقم التالي:</p>
-            <p><strong>رقم الحساب 30647036   </strong></p>
-            <p>إذا كنت بحاجة لمزيد من المعلومات، لا تتردد في الاتصال بنا.</p>
-        </div>
-    </section>
+    <p>رقم الحساب: 30647036</p>
+</div>
     
      
     <footer class="footer">
