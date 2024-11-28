@@ -54,7 +54,43 @@ section {
     background-position: center;
     background-attachment: fixed;
 }
+/* تنسيق العنوان */
+h1 {
+    color: #2d89ef; /* لون أزرق */
+    text-align: center; /* توسيط النص */
+    font-family: "Arial", sans-serif; /* نوع الخط */
+    font-size: 2.5em; /* حجم النص */
+    margin-bottom: 20px; /* مسافة تحت النص */
+    text-shadow: 2px 2px 5px #ccc; /* ظل خفيف */
+}
 
+/* تنسيق مشغل الصوت */
+audio {
+    display: block; /* جعله في سطر منفصل */
+    margin: 20px auto; /* توسيطه في الصفحة */
+    width: 80%; /* تحديد العرض */
+    max-width: 400px; /* الحد الأقصى للعرض */
+    background-color: #ffffff; /* لون خلفية مشغل الصوت */
+    border: 2px solid #2d89ef; /* حافة بلون أزرق */
+    border-radius: 10px; /* زوايا دائرية */
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2); /* ظل خفيف */
+    padding: 10px; /* مساحة داخلية */
+    transition: transform 0.3s, box-shadow 0.3s; /* تأثير الانتقال */
+}
+
+/* تأثير عند مرور الفأرة */
+audio:hover {
+    transform: scale(1.05); /* تكبير بسيط */
+    box-shadow: 0 6px 12px rgba(0, 0, 0, 0.3); /* تعميق الظل */
+}
+
+/* إضافة خلفية للصفحة (اختياري) */
+body {
+    background: linear-gradient(135deg, #e0f7fa, #f7f9fc); /* تدرج لوني */
+    font-family: "Arial", sans-serif; /* نوع الخط */
+    padding: 20px; /* مساحة داخلية */
+    text-align: center; /* توسيط المحتوى */
+}
 .main h2 {
     color: #fff;
     font-size: 1.4em;
