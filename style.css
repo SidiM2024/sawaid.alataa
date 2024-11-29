@@ -6,6 +6,42 @@
     box-sizing: border-box;
     scroll-behavior: smooth; 
 }
+countdown-container {
+    padding: 50px;
+    text-align: center;
+  }
+  
+  h1 {
+    font-size: 2rem;
+    margin-bottom: 20px;
+    color: #2c3e50;
+  }
+  
+  #countdown {
+    display: flex;
+    justify-content: center;
+    gap: 20px;
+  }
+  
+  .time-box {
+    background: #2c3e50;
+    color: white;
+    padding: 20px;
+    border-radius: 10px;
+    width: 100px;
+  }
+  
+  .time-box span {
+    display: block;
+    font-size: 2.5rem;
+    font-weight: bold;
+  }
+  
+  .time-box p {
+    margin: 0;
+    font-size: 1.2rem;
+  }
+  
 
 header {
     background-color: #f0f0f0;
