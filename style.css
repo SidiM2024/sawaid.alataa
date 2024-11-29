@@ -7,39 +7,39 @@
     scroll-behavior: smooth; 
 }
 countdown-container {
-    padding: 50px;
+    padding: 20px;
     text-align: center;
   }
   
   h1 {
-    font-size: 2rem;
-    margin-bottom: 20px;
+    font-size: 1.5rem;
+    margin-bottom: 15px;
     color: #2c3e50;
   }
   
   #countdown {
     display: flex;
     justify-content: center;
-    gap: 20px;
+    gap: 10px;
   }
   
   .time-box {
     background: #2c3e50;
     color: white;
-    padding: 20px;
-    border-radius: 10px;
-    width: 100px;
+    padding: 10px;
+    border-radius: 5px;
+    width: 60px;
   }
   
   .time-box span {
     display: block;
-    font-size: 2.5rem;
+    font-size: 1.5rem;
     font-weight: bold;
   }
   
   .time-box p {
     margin: 0;
-    font-size: 1.2rem;
+    font-size: 0.8rem;
   }
   
 
