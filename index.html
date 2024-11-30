@@ -11,13 +11,7 @@
     <link rel="stylesheet" href="style.css">
     <title>سواعد العطاء</title>
     <script async src="https://www.googletagmanager.com/gtag/js?id=G-TDT713K3J3"></script>
-<script>
-  window.dataLayer = window.dataLayer || [];
-  function gtag(){dataLayer.push(arguments);}
-  gtag('js', new Date());
 
-  gtag('config', 'G-TDT713K3J3');
-</script>
 
 </head>
 <body dir="rtl">
@@ -217,29 +211,7 @@
         <button onclick="donate()">تبرع الآن</button>
     </div> 
 
- <!-- رسالة التذكير -->
-<div id="reminderMessage" style="display: none;">
-    <p>صلى على النبي</p>
-    <p>جمعية سواعد العطاء</p>
-</div>
-
-<!-- إضافة السكربتات الخاصة بـ Firebase -->
-<script src="https://www.gstatic.com/firebasejs/9.6.1/firebase-app.js"></script>
-<script src="https://www.gstatic.com/firebasejs/9.6.1/firebase-messaging.js"></script>
-
-<!-- تسجيل الـ Service Worker -->
-<script>
-    if ('serviceWorker' in navigator) {
-        navigator.serviceWorker.register('service-worker.js')
-            .then(function(registration) {
-                console.log('Service Worker تم تسجيله بنجاح:', registration);
-            })
-            .catch(function(error) {
-                console.log('خطأ في تسجيل Service Worker:', error);
-            });
-    }
-</script>
-
+ 
 <!-- سكربت المستخدم -->
 <script src="script.js"></script>
      
