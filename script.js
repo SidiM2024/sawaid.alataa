@@ -1,19 +1,16 @@
-const countdown = () => {
-    // تاريخ بداية رمضان
-    const ramadanDate = new Date("2025-03-10T00:00:00Z").getTime(); // تأكد من تنسيق التاريخ بشكل صحيح
-    const now = new Date().getTime(); // الوقت الحالي
-    const gap = ramadanDate - now; // الفارق بين التاريخين
+// تحديد تاريخ رمضان 2025
+const targetDate = new Date("2025-03-29T00:00:00").getTime(); // افترض أن رمضان في 29 مارس 2025
 
-    // حساب الوقت (الثواني، الدقائق، الساعات، الأيام)
-    const second = 1000;
-    const minute = second * 60;
-    const hour = minute * 60;
-    const day = hour * 24;
+// تحديث العد التنازلي كل ثانية
+const countdownInterval = setInterval(function() {
+    const now = new Date().getTime();
+    const distance = targetDate - now;
 
-    const days = Math.floor(gap / day);
-    const hours = Math.floor((gap % day) / hour);
-    const minutes = Math.floor((gap % hour) / minute);
-    const seconds = Math.floor((gap % minute) / second);
+    // حساب الأيام والساعات والدقائق والثواني
+    const days = Math.floor(distance / (1000 * 60 * 60 * 24));
+    const hours = Math.floor((distance % (1000 * 60 * 60 * 24)) / (1000 * 60 * 60));
+    const minutes = Math.floor((distance % (1000 * 60 * 60)) / (1000 * 60));
+    const seconds = Math.floor((distance % (1000 * 60)) / 1000);
 
     // عرض النتائج في العناصر
     document.getElementById("days").innerText = days;
@@ -21,22 +18,13 @@ const countdown = () => {
     document.getElementById("minutes").innerText = minutes;
     document.getElementById("seconds").innerText = seconds;
 
-    // إذا انتهت الفترة الزمنية، إيقاف العد التنازلي
-    if (gap <= 0) {
-        clearInterval(countdownInterval); // إيقاف العد التنازلي
-        document.getElementById("days").innerText = "رمضان قد بدأ!";
-        document.getElementById("hours").innerText = "";
-        document.getElementById("minutes").innerText = "";
-        document.getElementById("seconds").innerText = "";
+    // إذا انتهى العد التنازلي
+    if (distance <= 0) {
+        clearInterval(countdownInterval);
+        document.getElementById("countdown").innerHTML = "رمضان 2025 قد وصل!";
     }
-};
+}, 1000);
 
-// تحديث العد التنازلي كل ثانية
-const countdownInterval = setInterval(countdown, 1000);
-
-function donate() {
-    const payment = document.getElementById("payment").value;
-    let accountNumber;
 
     // تحديد رقم الحساب لكل بنك
     switch (payment) {
