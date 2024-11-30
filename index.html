@@ -228,7 +228,10 @@
 <script src="https://www.gstatic.com/firebasejs/9.6.1/firebase-messaging.js"></script>
 <script src="script.js"></script>
 
-<!-- تسجيل الـ Service Worker -->
+
+        
+ <script src="script.js"></script>
+ <!-- تسجيل الـ Service Worker -->
 <script>
     if ('serviceWorker' in navigator) {
         navigator.serviceWorker.register('/service-worker.js')
@@ -239,9 +242,7 @@
                 console.log('خطأ في تسجيل Service Worker:', error);
             });
     }
-</script>
-        
- <script src="script.js"></script>    
+</script>   
      
     
 </body>
