@@ -200,28 +200,22 @@
         </ul>
     </section>
     
-    <section id="donate">
-       <h1>تبرع لجمعية </h1>
-<p>ساهم في دعم مشاريعنا الخيرية وكن جزءًا من التغيير!</p>
-<form>
-    <label for="amount">المبلغ (أوقية قديمة):</label>
-    <input type="text" id="amount" name="amount" required>
-    <br><br>
-    <label for="payment-method">طريقة الدفع:</label>
-    <select id="payment-method" name="payment-method" required>
-        <option value="bankly">تطبيق بنكيلي</option>
-        <option value="masrafi">تطبيق مصرفي</option>
-        <option value="bim">تطبيق بيم باك</option>
-        <option value="amanati">تطبيق أمانتي</option>
-        <option value="click">تطبيق كليك</option>
-    </select>
-    <br><br>
-    <button type="button" onclick="document.getElementById('account-details').style.display='block'">تبرع الآن</button>
-</form>
-<div id="account-details" style="display:none;">
-    
-    <p>رقم الحساب: 30647036</p>
-</div>
+ <div class="donation-box">
+        <h2>تبرع لجمعية</h2>
+        <p>ساهم في دعم مشاريعنا الخيرية وكن جزءاً من التغيير!</p>
+        <label for="amount">المبلغ (أوقية قديمة):</label>
+        <input type="number" id="amount" placeholder="أدخل المبلغ" />
+        <label for="payment">طريقة الدفع:</label>
+        <select id="payment">
+            <option value="" disabled selected>اختر طريقة دفع</option> <!-- الخيار الافتراضي -->
+            <option value="bankily">بنكيلي</option>
+            <option value="masrafy">مصرفي</option>
+            <option value="bim">بيم بانك</option>
+            <option value="click">كليك</option>
+            <option value="amanty">أمانتي</option>
+        </select>
+        <button onclick="donate()">تبرع الآن</button>
+    </div> 
         
  <script src="script.js"></script>    
      
