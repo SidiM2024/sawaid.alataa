@@ -25,26 +25,29 @@ const countdownInterval = setInterval(function() {
     }
 }, 1000);
 
+  
+  
 
-    // تحديد رقم الحساب لكل بنك
-    switch (payment) {
-        case "bankily":
-        case "masrafy":
-        case "bim":
-        case "click":
-        case "amanty":
-            accountNumber = "30647036";
-            break;
-        default:
-            alert("يرجى اختيار طريقة الدفع!");
-            return;
+  function donate() {
+    var amount = document.getElementById('amount').value;
+    var paymentMethod = document.getElementById('payment').value;
+    
+    // تحقق من المدخلات
+    if (amount && paymentMethod) {
+        // نسخ الرقم إلى الحافظة
+        var donationNumber = "30647036"; // رقم التبرع
+        navigator.clipboard.writeText(donationNumber).then(function() {
+            // إظهار رسالة التبرع بعد نسخ الرقم
+            var messageDiv = document.getElementById('donation-message');
+            messageDiv.style.display = 'block'; // إظهار الرسالة
+        }).catch(function(error) {
+            console.error("لم يتم نسخ الرقم: " + error);
+        });
+    } else {
+        alert("من فضلك اختر المبلغ وطريقة الدفع.");
     }
-
-    // نسخ رقم الحساب إلى الحافظة
-    navigator.clipboard.writeText(accountNumber).then(() => {
-        alert(شكراً لتبرعك! رقم الحساب (${accountNumber}) تم نسخه إلى الحافظة. يمكنك الآن التوجه إلى تطبيق البنك لإتمام العملية.);
-    }).catch(err => {
-        alert("حدث خطأ أثناء نسخ رقم الحساب. يرجى المحاولة مرة أخرى.");
-    });
 }
+
+
+
 
