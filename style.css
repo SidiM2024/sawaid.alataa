@@ -35,11 +35,14 @@ countdown-container {
     display: block;
     font-size: 1.5rem;
     font-weight: bold;
+    background-color: #218838;  
   }
   
   .time-box p {
     margin: 0;
     font-size: 0.8rem;
+    background-color: #94a728;
+    font-weight: bold;  
   }
   
 
