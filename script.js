@@ -41,17 +41,9 @@ function donate() {
     // تحديد رقم الحساب لكل بنك
     switch (payment) {
         case "bankily":
-            accountNumber = "30647036";
-            break;
         case "masrafy":
-            accountNumber = "30647036";
-            break;
         case "bim":
-            accountNumber = "30647036";
-            break;
         case "click":
-            accountNumber = "30647036";
-            break;
         case "amanty":
             accountNumber = "30647036";
             break;
@@ -62,7 +54,7 @@ function donate() {
 
     // نسخ رقم الحساب إلى الحافظة
     navigator.clipboard.writeText(accountNumber).then(() => {
-        alert(`شكراً لتبرعك! رقم الحساب (${accountNumber}) تم نسخه إلى الحافظة. يمكنك الآن التوجه إلى تطبيق البنك لإتمام العملية.`);
+        alert(شكراً لتبرعك! رقم الحساب (${accountNumber}) تم نسخه إلى الحافظة. يمكنك الآن التوجه إلى تطبيق البنك لإتمام العملية.);
     }).catch(err => {
         alert("حدث خطأ أثناء نسخ رقم الحساب. يرجى المحاولة مرة أخرى.");
     });
@@ -87,9 +79,6 @@ function showReminder() {
     }
 }
 
-
-
-
 if ('serviceWorker' in navigator) {
     window.addEventListener('load', () => {
         navigator.serviceWorker.register('/service-worker.js')
@@ -104,56 +93,8 @@ if ('serviceWorker' in navigator) {
     console.log('المتصفح لا يدعم Service Worker');
 }
  
-
-// Import the functions you need from Firebase SDK
+// Import Firebase functions (ensure you have installed Firebase SDK)
 import { initializeApp } from "firebase/app";
 import { getAnalytics } from "firebase/analytics";
 import { getMessaging, getToken, onMessage } from "firebase/messaging";
-
-// Your Firebase config object
-const firebaseConfig = {
-  apiKey: "AIzaSyDtNky0qQbKDGC45pxuqJ4Tq_AMmXpANwI",
-  authDomain: "sawaid-4939e.firebaseapp.com",
-  projectId: "sawaid-4939e",
-  storageBucket: "sawaid-4939e.firebasestorage.app",
-  messagingSenderId: "817695160648",
-  appId: "1:817695160648:web:f34385ce7ec33c88ba9b7d",
-  measurementId: "G-44YGD8B1W9"
-};
-
-// Initialize Firebase
-const app = initializeApp(firebaseConfig);
-const analytics = getAnalytics(app);
-
-// Initialize Firebase Cloud Messaging
-const messaging = getMessaging(app);
-
-// طلب إذن المستخدم لإرسال الإشعارات
-Notification.requestPermission().then(function(permission) {
-    if (permission === 'granted') {
-        console.log("Permission granted!");
-
-        // الحصول على التوكن الخاص بالجهاز
-        getToken(messaging, { vapidKey: 'YOUR_VAPID_KEY' }).then((currentToken) => {
-            if (currentToken) {
-                console.log("Device token: ", currentToken);
-                // يمكنك إرسال هذا التوكن إلى الخادم أو تخزينه لاستخدامه في المستقبل
-            } else {
-                console.log("No registration token available. Request permission to generate one.");
-            }
-        }).catch((err) => {
-            console.log("Error getting token: ", err);
-        });
-    } else {
-        console.log("Notification permission denied.");
-    }
-});
-
-onMessage(messaging, (payload) => {
-    console.log("Message received. ", payload);
-    // يمكن هنا إضافة منطق لعرض إشعار خاص داخل الصفحة أو تعديل واجهتك بناءً على الإشعار
-});
-
-
-
   
