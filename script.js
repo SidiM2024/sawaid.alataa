@@ -1,5 +1,5 @@
 // تحديد تاريخ رمضان 2025
-const targetDate = new Date("2025-03-29T00:00:00").getTime(); // افترض أن رمضان في 29 مارس 2025
+const targetDate = new Date("2025-03-01T00:00:00").getTime(); // افترض أن رمضان في 01 مارس 2025
 
 // تحديث العد التنازلي كل ثانية
 const countdownInterval = setInterval(function() {
