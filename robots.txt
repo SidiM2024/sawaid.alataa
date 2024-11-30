@@ -1,0 +1,3 @@
+User-agent: *
+Allow: /
+Sitemap: https://sidim2024.github.io/sawaid.alataa/sitemap.xml
