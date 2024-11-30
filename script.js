@@ -23,4 +23,43 @@ const countdown = () => {
   
   // تحديث العد كل ثانية
   setInterval(countdown, 1000);
+
+
+function donate() {
+    const payment = document.getElementById("payment").value;
+    let accountNumber;
+
+    // تحديد رقم الحساب لكل بنك
+    switch (payment) {
+        case "bankily":
+            accountNumber = "30647036";
+            break;
+        case "masrafy":
+            accountNumber = "30647036";
+            break;
+        case "bim":
+            accountNumber = "30647036";
+            break;
+        case "click":
+            accountNumber = "30647036";
+            break;
+        case "amanty":
+            accountNumber = "30647036";
+            break;
+        default:
+            alert("يرجى اختيار طريقة الدفع!");
+            return;
+    }
+
+    // نسخ رقم الحساب إلى الحافظة
+    navigator.clipboard.writeText(accountNumber).then(() => {
+        alert(`شكراً لتبرعك! رقم الحساب (${accountNumber}) تم نسخه إلى الحافظة. يمكنك الآن التوجه إلى تطبيق البنك لإتمام العملية.`);
+    }).catch(err => {
+        alert("حدث خطأ أثناء نسخ رقم الحساب. يرجى المحاولة مرة أخرى.");
+    });
+}
+
+
+
+
   
