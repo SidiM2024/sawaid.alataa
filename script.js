@@ -25,10 +25,7 @@ const countdownInterval = setInterval(function() {
     }
 }, 1000);
 
-  
-  
-
-  function donate() {
+function donate() {
     var amount = document.getElementById('amount').value;
     var paymentMethod = document.getElementById('payment').value;
     
@@ -37,9 +34,11 @@ const countdownInterval = setInterval(function() {
         // نسخ الرقم إلى الحافظة
         var donationNumber = "30647036"; // رقم التبرع
         navigator.clipboard.writeText(donationNumber).then(function() {
-            // إظهار رسالة التبرع بعد نسخ الرقم
-            var messageDiv = document.getElementById('donation-message');
-            messageDiv.style.display = 'block'; // إظهار الرسالة
+            // إظهار نافذة منبثقة عند إدخال المدخلات بشكل صحيح
+            var donationWindow = window.open("", "Donation Success", "width=400,height=200");
+            donationWindow.document.write("<h2>تم نسخ رقم التبرع إلى الحافظة بنجاح!</h2><p>رقم التبرع: " + donationNumber + "</p>");
+            donationWindow.document.write("<p>يمكنك الآن توجه إلى تطبيق البنكي ولصق رقم.</p>");
+            donationWindow.document.write("<button onclick='window.close()'>إغلاق</button>");
         }).catch(function(error) {
             console.error("لم يتم نسخ الرقم: " + error);
         });
@@ -47,7 +46,5 @@ const countdownInterval = setInterval(function() {
         alert("من فضلك اختر المبلغ وطريقة الدفع.");
     }
 }
-
-
 
 
