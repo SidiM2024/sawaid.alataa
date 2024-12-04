@@ -659,3 +659,90 @@ button:hover {
      
     }
 }
+ #team {
+    padding: 50px;
+    background-color: #f1f1f1;
+  }
+  
+  .team-container {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(150px, 1fr));
+    gap: 10px;
+    justify-items: center;
+  }
+  
+  .team-member {
+    background-color: white;
+    border: 1px solid #ddd;
+    border-radius: 8px;
+    padding: 20px;
+    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+    text-align: center;
+    position: relative;
+    overflow: hidden;
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+  }
+  
+  .team-member:hover {
+    transform: translateY(-10px);
+    box-shadow: 0 8px 20px rgba(0, 0, 0, 0.2);
+  }
+  
+  .image-container {
+    position: relative;
+    width: 100%;
+    max-width: 150px;
+    margin: 0 auto 15px;
+    border-radius: 50%;
+    overflow: hidden;
+  }
+  
+  .image-container img {
+    width: 100%;
+    display: block;
+  }
+  
+  .logo-overlay {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 40px;
+    height: 40px;
+    background-color: rgba(255, 255, 255, 0.8);
+    border-radius: 50%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    border: 2px solid #007bff;
+  }
+  
+  .logo-overlay img {
+    width: 60%;
+  }
+  
+  h3 {
+    margin: 10px 0 5px;
+    font-size: 1.3rem;
+    color: #007bff;
+  }
+  
+  .role {
+    font-weight: bold;
+    color: #555;
+  }
+  
+  .bio {
+    color: #666;
+    font-size: 0.9rem;
+  }
+  
+  @media (max-width: 768px) {
+    header h1 {
+      font-size: 2rem;
+    }
+  
+    header p {
+      font-size: 1rem;
+    }
+  }
+  
