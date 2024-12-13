@@ -178,16 +178,7 @@ header {
     }
 }
 
-.main {
-    width: 100%;
-    min-height: 100vh;
-    display: flex;
-    align-items: center;
-    background: url(ada\ sw.jpg) no-repeat;
-    background-size: cover;
-    background-position: center;
-    background-attachment: fixed;
-}
+
 /* تنسيق العنوان */
 h1 {
     color: #2d89ef; /* لون أزرق */
