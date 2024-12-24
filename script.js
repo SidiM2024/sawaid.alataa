@@ -47,4 +47,26 @@ function donate() {
     }
 }
 
+document.getElementById("membershipForm").addEventListener("submit", function (e) {
+    e.preventDefault();
+
+    const fullName = document.getElementById("fullName").value;
+    const phone = document.getElementById("phone").value;
+    const occupation = document.getElementById("occupation").value;
+    const address = document.getElementById("address").value;
+
+    const message = `
+        مرحبًا،
+        أريد الانتساب للجمعية:
+        الاسم الكامل: ${fullName}
+        رقم الهاتف: ${phone}
+        التخصص الدراسي أو العمل: ${occupation}
+        مكان السكن: ${address}
+    `;
+
+    // فتح واتساب مع الرسالة
+    const whatsappUrl = `https://wa.me/30647036?text=${encodeURIComponent(message)}`;
+    window.open(whatsappUrl, "_blank");
+});
+
 
