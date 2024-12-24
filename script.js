@@ -90,5 +90,83 @@ uploadForm.addEventListener("submit", (e) => {
     confirmationModal.style.display = "none";
 });
 
+// الحصول على النافذة
+var modal = document.getElementById("prayerModal");
+
+// الحصول على زر الإغلاق
+var closeBtn = document.getElementsByClassName("close-btn")[0];
+
+// عرض النافذة عند تحميل الصفحة
+window.onload = function() {
+    modal.style.display = "block";
+    fetchPrayerTimes();
+}
+
+// إغلاق النافذة عند الضغط على زر الإغلاق
+closeBtn.onclick = function() {
+    modal.style.display = "none";
+}
+
+// إغلاق النافذة عند النقر خارج النافذة
+window.onclick = function(event) {
+    if (event.target == modal) {
+        modal.style.display = "none";
+    }
+}
+
+// دالة جلب أوقات الصلاة من Aladhan API
+function fetchPrayerTimes() {
+    const apiUrl = 'http://api.aladhan.com/v1/timingsByCity?city=Nouakchott&country=Mauritania&method=2';
+    
+    fetch(apiUrl)
+        .then(response => response.json())
+        .then(data => {
+            if (data.code === 200) {
+                const times = data.data.timings;
+                displayPrayerTimes(times);
+            } else {
+                console.error('حدث خطأ أثناء جلب البيانات.');
+            }
+        })
+        .catch(error => {
+            console.error('خطأ في الاتصال بـ API:', error);
+        });
+}
+
+// دالة لعرض أوقات الصلاة في النافذة
+function displayPrayerTimes(times) {
+    const prayerTimesList = document.getElementById("prayer-times");
+
+    // تعريف الأسماء العربية للصلوات
+    const prayerNames = {
+        "Fajr": "الفجر",
+        "Dhuhr": "الظهر",
+        "Asr": "العصر",
+        "Maghrib": "المغرب",
+        "Isha": "العشاء"
+    };
+
+    // إضافة أوقات الصلاة إلى القائمة
+    for (let prayer in times) {
+        // التحقق إذا كان الوقت في الأوقات المطلوبة فقط
+        if (prayerNames[prayer]) {
+            let listItem = document.createElement("li");
+            let icon = document.createElement("i");
+            icon.className = "prayer-icon fas fa-mosque"; // يمكنك تخصيص الأيقونة هنا
+            listItem.appendChild(icon);
+            
+            // تغيير اسم الصلاة إلى الاسم العربي
+            let prayerName = document.createElement("span");
+            prayerName.textContent = prayerNames[prayer];
+            listItem.appendChild(prayerName);
+            
+            let prayerTime = document.createElement("span");
+            prayerTime.textContent = times[prayer];
+            listItem.appendChild(prayerTime);
+
+            prayerTimesList.appendChild(listItem);
+        }
+    }
+}
 
 
