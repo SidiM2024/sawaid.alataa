@@ -1229,3 +1229,95 @@ select:focus {
         opacity: 1;
     }
 }
+
+/* حاوية الجدول */
+.table-container {
+    max-width: 1000px;
+    margin: 30px auto;
+    padding: 20px;
+    background-color: #f9f9f9;
+    border-radius: 10px;
+    box-shadow: 0 6px 20px rgba(0, 0, 0, 0.1);
+    text-align: center;
+    animation: fadeIn 1s ease-in-out;
+}
+
+.table-title {
+    font-size: 28px;
+    font-weight: bold;
+    color: #007bff;
+    margin-bottom: 20px;
+}
+
+/* تصميم الجدول */
+.table {
+    width: 100%;
+    border-collapse: collapse;
+    background-color: #fff;
+    border-radius: 10px;
+    overflow: hidden;
+    box-shadow: 0 6px 12px rgba(0, 0, 0, 0.1);
+}
+
+/* رؤوس الجدول */
+.table th {
+    background-color: #007bff;
+    color: white;
+    padding: 12px;
+    font-size: 18px;
+}
+
+/* بيانات الجدول */
+.table td {
+    padding: 12px;
+    font-size: 16px;
+    text-align: center;
+    color: #333;
+}
+
+/* إضافة الأيقونات */
+.table i {
+    margin-right: 10px;
+    color: #007bff;
+    font-size: 20px;
+}
+
+/* التفاعل مع الصفوف */
+.table tr:hover {
+    background-color: #f1f9ff;
+    transform: scale(1.02);
+    box-shadow: 0 6px 18px rgba(0, 0, 0, 0.1);
+}
+
+/* خطوط الجدول */
+.table th, .table td {
+    border-bottom: 2px solid #ddd;
+}
+
+/* التأثيرات المتحركة */
+@keyframes fadeIn {
+    from {
+        opacity: 0;
+        transform: translateY(20px);
+    }
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+/* الاستجابة للأجهزة الصغيرة */
+@media (max-width: 768px) {
+    .table-container {
+        padding: 10px;
+    }
+
+    .table-title {
+        font-size: 24px;
+    }
+
+    .table th, .table td {
+        padding: 8px;
+        font-size: 14px;
+    }
+}
