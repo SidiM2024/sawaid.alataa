@@ -25,27 +25,6 @@ const countdownInterval = setInterval(function() {
     }
 }, 1000);
 
-function donate() {
-    var amount = document.getElementById('amount').value;
-    var paymentMethod = document.getElementById('payment').value;
-    
-    // تحقق من المدخلات
-    if (amount && paymentMethod) {
-        // نسخ الرقم إلى الحافظة
-        var donationNumber = "30647036"; // رقم التبرع
-        navigator.clipboard.writeText(donationNumber).then(function() {
-            // إظهار نافذة منبثقة عند إدخال المدخلات بشكل صحيح
-            var donationWindow = window.open("", "Donation Success", "width=400,height=200");
-            donationWindow.document.write("<h2>تم نسخ رقم التبرع إلى الحافظة بنجاح!</h2><p>رقم التبرع: " + donationNumber + "</p>");
-            donationWindow.document.write("<p>يمكنك الآن توجه إلى تطبيق البنكي ولصق رقم.</p>");
-            donationWindow.document.write("<button onclick='window.close()'>إغلاق</button>");
-        }).catch(function(error) {
-            console.error("لم يتم نسخ الرقم: " + error);
-        });
-    } else {
-        alert("من فضلك اختر المبلغ وطريقة الدفع.");
-    }
-}
 
 document.getElementById("membershipForm").addEventListener("submit", function (e) {
     e.preventDefault();
@@ -68,5 +47,48 @@ document.getElementById("membershipForm").addEventListener("submit", function (e
     const whatsappUrl = `https://wa.me/30647036?text=${encodeURIComponent(message)}`;
     window.open(whatsappUrl, "_blank");
 });
+
+const donateButton = document.getElementById("donateButton");
+const confirmationModal = document.getElementById("confirmationModal");
+const closeButtons = document.querySelectorAll(".close-modal");
+const copyButton = document.getElementById("copyButton");
+const uploadForm = document.getElementById("uploadForm");
+
+// فتح نافذة التأكيد
+donateButton.addEventListener("click", () => {
+    const bank = document.getElementById("bankSelect").value;
+    if (!bank) {
+        alert("يرجى اختيار التطبيق البنكي.");
+        return;
+    }
+    document.getElementById("bankMessage").innerText = `لقد اخترت تطبيق ${bank}.`;
+    confirmationModal.style.display = "flex";
+});
+
+// غلق النافذة
+closeButtons.forEach(button => {
+    button.addEventListener("click", () => {
+        confirmationModal.style.display = "none";
+    });
+});
+
+// نسخ الرقم
+copyButton.addEventListener("click", () => {
+    navigator.clipboard.writeText("30647036");
+    alert("تم نسخ الرقم.");
+});
+
+// إرسال صورة الدفع
+uploadForm.addEventListener("submit", (e) => {
+    e.preventDefault();
+    const file = document.getElementById("paymentProof").files[0];
+    if (!file) {
+        alert("يرجى اختيار صورة تأكيد الدفع.");
+        return;
+    }
+    alert("تم رفع صورة تأكيد الدفع! يرجى إرسالها إلى الواتساب 30647036.");
+    confirmationModal.style.display = "none";
+});
+
 
 
