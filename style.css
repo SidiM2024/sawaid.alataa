@@ -900,129 +900,155 @@ button:hover {
     }
   }
   
- .azkar-section {
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    height: 100vh;
-    padding: 20px;
-    background: linear-gradient(135deg, #6dd5ed, #2193b0);
-}
-
-.azkar-box {
-    background: linear-gradient(145deg, #ffffff, #f0f0f0);
-    border-radius: 20px;
-    box-shadow: 0 10px 20px rgba(0, 0, 0, 0.2), inset 0 5px 10px rgba(255, 255, 255, 0.5);
-    padding: 30px;
-    max-width: 500px;
+ /* تنسيق القسم بالكامل */
+.resource-section {
+    background-color: #f4f4f9;
+    padding: 60px 20px;
     text-align: center;
-    animation: fadeIn 1.5s ease-out;
+    border-radius: 20px;
+    box-shadow: 0 20px 40px rgba(0, 0, 0, 0.1);
+    animation: fadeIn 1.5s ease-in-out;
 }
 
-.azkar-box h2 {
-    font-size: 2rem;
-    margin-bottom: 15px;
-    color: #333;
-}
-
-.azkar-box p {
-    font-size: 1.2rem;
+/* تنسيق العنوان */
+.resource-section h2 {
+    font-size: 40px;
+    color: #4caf50;
+    font-weight: bold;
     margin-bottom: 20px;
-    color: #555;
 }
 
-.azkar-button {
-    display: inline-block;
-    padding: 10px 20px;
-    font-size: 1.2rem;
-    color: #fff;
-    background: #2193b0;
-    border: none;
-    border-radius: 10px;
-    text-decoration: none;
-    box-shadow: 0 5px 15px rgba(0, 0, 0, 0.2);
+.resource-section p {
+    font-size: 18px;
+    color: #777;
+    margin-bottom: 40px;
+}
+
+/* تنسيق البطاقات */
+.resource-cards {
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(250px, 1fr));
+    gap: 30px;
+    justify-items: center;
+}
+
+/* تنسيق كل بطاقة */
+.resource-card {
+    background-color: #fff;
+    border-radius: 15px;
+    padding: 30px 20px;
+    width: 90%;
+    max-width: 350px;
+    box-shadow: 0 6px 15px rgba(0, 0, 0, 0.1);
+    text-align: center;
     transition: transform 0.3s ease, box-shadow 0.3s ease;
+    cursor: pointer;
+    animation: cardIn 1s ease-out;
 }
 
-.azkar-button:hover {
-    transform: translateY(-5px);
-    box-shadow: 0 10px 25px rgba(0, 0, 0, 0.3);
-    background: #6dd5ed;
+/* تأثير التحويم على بطاقة النشاط */
+.resource-card:hover {
+    transform: translateY(-10px);
+    box-shadow: 0 15px 30px rgba(0, 0, 0, 0.2);
 }
 
-/* Animation */
+/* تنسيق الأيقونات داخل البطاقة */
+.resource-icon {
+    font-size: 50px;
+    color: #4caf50;
+    margin-bottom: 20px;
+    transition: color 0.3s ease;
+}
+
+/* تغيير اللون عند التحويم على الأيقونة */
+.resource-card:hover .resource-icon {
+    color: #ff5722;
+}
+
+/* تنسيق العناوين */
+.resource-card h3 {
+    font-size: 24px;
+    font-weight: bold;
+    color: #333;
+    margin-bottom: 15px;
+}
+
+/* تنسيق الوصف النصي */
+.resource-card p {
+    font-size: 16px;
+    color: #777;
+    line-height: 1.5;
+}
+
+/* تنسيق الزر */
+.resource-btn {
+    display: inline-block;
+    padding: 12px 30px;
+    background-color: #2196f3;
+    color: #fff;
+    border-radius: 25px;
+    text-decoration: none;
+    font-weight: bold;
+    margin-top: 20px;
+    transition: background-color 0.3s ease;
+}
+
+.resource-btn:hover {
+    background-color: #ff5722;
+}
+
+/* التأثيرات المتحركة */
 @keyframes fadeIn {
     from {
         opacity: 0;
-        transform: scale(0.9);
+        transform: translateY(30px);
     }
     to {
         opacity: 1;
-        transform: scale(1);
+        transform: translateY(0);
     }
 }
 
-.quran-section {
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    height: 100vh;
-    padding: 20px;
-    background: linear-gradient(135deg, #1d976c, #93f9b9);
-}
-
-.quran-box {
-    background: linear-gradient(145deg, #ffffff, #f0f0f0);
-    border-radius: 20px;
-    box-shadow: 0 10px 20px rgba(0, 0, 0, 0.2), inset 0 5px 10px rgba(255, 255, 255, 0.5);
-    padding: 30px;
-    max-width: 500px;
-    text-align: center;
-    animation: fadeIn 1.5s ease-out;
-}
-
-.quran-box h2 {
-    font-size: 2rem;
-    margin-bottom: 15px;
-    color: #333;
-}
-
-.quran-box p {
-    font-size: 1.2rem;
-    margin-bottom: 20px;
-    color: #555;
-}
-
-.quran-button {
-    display: inline-block;
-    padding: 10px 20px;
-    font-size: 1.2rem;
-    color: #fff;
-    background: #1d976c;
-    border: none;
-    border-radius: 10px;
-    text-decoration: none;
-    box-shadow: 0 5px 15px rgba(0, 0, 0, 0.2);
-    transition: transform 0.3s ease, box-shadow 0.3s ease;
-}
-
-.quran-button:hover {
-    transform: translateY(-5px);
-    box-shadow: 0 10px 25px rgba(0, 0, 0, 0.3);
-    background: #93f9b9;
-}
-
-/* Animation */
-@keyframes fadeIn {
-    from {
+@keyframes cardIn {
+    0% {
+        transform: scale(0.5);
         opacity: 0;
-        transform: scale(0.9);
     }
-    to {
-        opacity: 1;
+    100% {
         transform: scale(1);
+        opacity: 1;
     }
 }
+
+/* استجابة التصميم لأجهزة الهواتف */
+@media (max-width: 768px) {
+    .resource-section h2 {
+        font-size: 28px;
+    }
+
+    .resource-cards {
+        grid-template-columns: 1fr;
+        gap: 20px;
+    }
+
+    .resource-card {
+        width: 90%;
+        max-width: 100%;
+    }
+
+    .resource-icon {
+        font-size: 40px;
+    }
+
+    .resource-card h3 {
+        font-size: 22px;
+    }
+
+    .resource-card p {
+        font-size: 14px;
+    }
+}
+
 #prayer-times {
     background: linear-gradient(135deg, #f0f4f7, #d9e8f2);
     padding: 40px 20px;
