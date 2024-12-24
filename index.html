@@ -155,23 +155,33 @@
     </section>
 
     
-   <section id="join-us">
-    <h2> الإنتساب للجمعية </h2>
-    <form>
-        <label for="name">الاسم الكامل:</label>
-        <input type="text" id="name" name="name" required>
-        
-        <label for="email">البريد الإلكتروني:</label>
-        <input type="email" id="email" name="email" required>
-        
-        <label for="phone">رقم الهاتف:</label>
-        <input type="tel" id="phone" name="phone" required>
-        
-        <a href="https://chat.whatsapp.com/FMHiT7D3KE44RQTmib1Rav" target="_blank">
-            <button type="button">انضم الآن</button>
-        </a>
+   <div class="membership-form-container">
+    <h2 class="form-title">الانتساب للجمعية</h2>
+    <form id="membershipForm">
+        <div class="form-group">
+            <label for="fullName"><i class="fas fa-user"></i> الاسم الكامل:</label>
+            <input type="text" id="fullName" name="fullName" placeholder="أدخل اسمك الكامل" required>
+        </div>
+
+        <div class="form-group">
+            <label for="phone"><i class="fas fa-phone"></i> رقم الهاتف:</label>
+            <input type="tel" id="phone" name="phone" placeholder="أدخل رقم هاتفك" required>
+        </div>
+
+        <div class="form-group">
+            <label for="occupation"><i class="fas fa-briefcase"></i> التخصص الدراسي أو العمل:</label>
+            <input type="text" id="occupation" name="occupation" placeholder="مثال: طالب، محاسب" required>
+        </div>
+
+        <div class="form-group">
+            <label for="address"><i class="fas fa-map-marker-alt"></i> مكان السكن:</label>
+            <input type="text" id="address" name="address" placeholder="أدخل مكان سكنك" required>
+        </div>
+
+        <button type="submit" class="submit-btn">تسجيل</button>
     </form>
-</section>
+</div>
+
 
     <section id="annual-plan">
         <h2>مبادرات العطاء - خطة سنوية وشهرية لتعزيز التكافل المجتمعي</h2>
