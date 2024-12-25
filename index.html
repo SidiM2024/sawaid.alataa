@@ -249,10 +249,64 @@
 
     <!-- قسم إجمالي التبرعات -->
     <div class="donations-counter">
-        <h2>إجمالي التبرعات من بداية تأسيس جمعية</h2>
-        <div class="counter">150,789 أوقية</div>
-        <p class="verse">"مَن ذَا الَّذِي يُقْرِضُ اللَّهَ قَرْضًا حَسَنًا فَيُضَاعِفَهُ لَهُ أَضْعَافًا كَثِيرَةً"</p>
-    </div>
+    <h2>  إجمالي التبرعات</h2>
+    <div class="counter" id="donation-count">0 أوقية</div>
+    <p class="verse">"مَن ذَا الَّذِي يُقْرِضُ اللَّهَ قَرْضًا حَسَنًا فَيُضَاعِفَهُ لَهُ أَضْعَافًا كَثِيرَةً"</p>
+</div>
+
+<style>
+    /* تنسيق العنصر الكامل */
+    .donations-counter {
+        text-align: center;
+        font-family: 'Arial', sans-serif;
+        margin-top: 50px;
+    }
+
+    /* تنسيق العداد */
+    .counter {
+        font-size: 36px;
+        font-weight: bold;
+        color: #28a745;
+        margin: 20px 0;
+        transition: all 0.3s ease-in-out;
+    }
+
+    /* تنسيق الآية */
+    .verse {
+        font-size: 18px;
+        color: #555;
+        font-style: italic;
+    }
+</style>
+
+<script>
+    // الحصول على العنصر الذي يحتوي على الرقم
+    const donationCountElement = document.getElementById('donation-count');
+
+    // الرقم النهائي
+    const finalAmount = 150789;
+
+    // إعدادات العداد
+    let currentAmount = 0;
+    const increment = finalAmount / 500;  // سرعة زيادة الرقم (تم تقليل السرعة)
+    const duration = 1500;  // مدة الانتقال (تم تقليل المدة)
+
+    // دالة لتحديث العداد
+    function updateCounter() {
+        if (currentAmount < finalAmount) {
+            currentAmount += increment;
+            donationCountElement.innerText = Math.floor(currentAmount) + ' أوقية';
+            setTimeout(updateCounter, duration / 100);  // زيادة فترة التوقف بين التحديثات لجعلها بطيئة أكثر
+        } else {
+            donationCountElement.innerText = finalAmount + ' أوقية';
+        }
+    }
+
+    // بدء العداد بعد تحميل الصفحة
+    window.onload = function() {
+        updateCounter();
+    };
+</script>
     <!-- إضافة الجافا سكريبت -->
   <script>
     const menuToggle = document.querySelector('.menu-toggle');
