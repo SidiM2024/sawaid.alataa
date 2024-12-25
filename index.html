@@ -1,0 +1,274 @@
+<!DOCTYPE html>
+<html dir="rtl" lang="ar">
+<head>
+  <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="موقع جمعية سواعد العطاء يهدف إلى تقديم المساعدة للفقراء والمحتاجين من خلال سقاية الماء، إفطار الصائم، وكسوة المحتاج.">
+    <meta name="keywords" content=" سواعد, العطاء, جمعية خيرية, تبرعات, مساعدة, سقاية الماء, إفطار الصائم, كسوة المحتاج, أعمال خيرية, سواعد العطاء">
+    <meta name="author" content="سيدي محمد ولد عبد الرحمن">
+    <title>جمعية سواعد العطاء - الصفحة الرئيسية</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
+    <!-- Google Analytics -->
+<script async src="https://www.googletagmanager.com/gtag/js?id=G-44YGD8B1W9"></script>
+<script>
+  window.dataLayer = window.dataLayer || [];
+  function gtag(){dataLayer.push(arguments);}
+  gtag('js', new Date());
+  gtag('config', 'G-44YGD8B1W9');
+</script>
+  
+
+    <style>
+        body {
+            font-family: 'Arial', sans-serif;
+            margin: 0;
+            padding: 0;
+            background: linear-gradient(to bottom, #1e293b, #4b5563);
+            color: #f3f4f6;
+            overflow-x: hidden;
+        }
+
+        /* العنوان الرئيسي */
+        h1, h2 {
+            text-align: center;
+            margin: 0;
+        }
+
+        h1 {
+            color: #fbbf24;
+            font-size: 3rem;
+        }
+
+        p {
+            text-align: center;
+            font-size: 1.2rem;
+            color: #e5e7eb;
+        }
+
+        /* قسم البانر */
+        .hero {
+            background: url('loo.jpg') center/cover no-repeat, linear-gradient(to right, #1e293b, #4b5563);
+            color: #f3f4f6;
+            padding: 100px 20px;
+            text-align: center;
+        }
+        
+        /* القائمة الجانبية */
+    .sidebar {
+      width: 250px;
+      background-color: #4caf50;
+      color: white;
+      height: 100vh;
+      position: fixed;
+      top: 0;
+      right: 0;
+      transition: transform 0.3s ease-in-out;
+      transform: translateX(100%);
+      z-index: 1000;
+    }
+
+    .sidebar.active {
+      transform: translateX(0);
+    }
+
+    .sidebar-header {
+      padding: 20px;
+      background-color: #388e3c;
+      text-align: center;
+      position: relative;
+    }
+
+    .sidebar-header img {
+      width: 80px;
+      height: auto;
+      border-radius: 50%;
+      margin-bottom: 10px;
+    }
+
+    .sidebar-header h3 {
+      margin: 0;
+      font-size: 1.2rem;
+    }
+
+    /* زر الإغلاق */
+    .close-btn {
+      position: absolute;
+      top: 10px;
+      left: 10px;
+      background: none;
+      border: none;
+      color: white;
+      font-size: 1.5rem;
+      cursor: pointer;
+    }
+
+    .sidebar-links {
+      list-style: none;
+      padding: 0;
+    }
+
+    .sidebar-links li {
+      padding: 15px 20px;
+      border-bottom: 1px solid rgba(255, 255, 255, 0.1);
+    }
+
+    .sidebar-links li a {
+      color: white;
+      text-decoration: none;
+      display: flex;
+      align-items: center;
+    }
+
+    .sidebar-links li a i {
+      margin-left: 10px;
+    }
+
+    .sidebar-links li:hover {
+      background-color: #2e7d32;
+    }
+
+    /* زر القائمة */
+    .menu-toggle {
+      position: fixed;
+      top: 15px;
+      right: 15px;
+      background-color: #4caf50;
+      color: white;
+      border: none;
+      padding: 10px;
+      border-radius: 50%;
+      cursor: pointer;
+      z-index: 1100;
+    }
+
+    .menu-toggle:focus {
+      outline: none;
+    }
+
+
+
+        .cta-btn {
+            background-color: #fbbf24;
+            color: #1e293b;
+            padding: 15px 25px;
+            font-size: 1.2rem;
+            border-radius: 50px;
+            text-decoration: none;
+            margin: 10px;
+            display: inline-block;
+        }
+
+        .cta-btn:hover {
+            background-color: #eab308;
+            color: #fff;
+        }
+
+        /* قسم إجمالي التبرعات */
+        .donations-counter {
+            background: linear-gradient(to right, #1e40af, #312e81);
+            color: #fff;
+            text-align: center;
+            padding: 40px 20px;
+            margin: 50px auto;
+            max-width: 800px;
+            border-radius: 15px;
+            box-shadow: 0 5px 15px rgba(0, 0, 0, 0.3);
+        }
+
+        .donations-counter h2 {
+            font-size: 2.5rem;
+            margin-bottom: 10px;
+        }
+
+        .donations-counter .counter {
+            font-size: 3rem;
+            font-weight: bold;
+        }
+
+        .donations-counter .verse {
+            margin-top: 20px;
+            font-size: 1.2rem;
+            font-style: italic;
+            color: #fbbf24;
+        }
+
+        /* التصميم المتجاوب */
+        @media (max-width: 768px) {
+            h1 {
+                font-size: 2rem;
+            }
+
+            .cta-btn {
+                font-size: 1rem;
+                padding: 10px 20px;
+            }
+
+            .donations-counter {
+                padding: 20px;
+            }
+
+            .donations-counter h2 {
+                font-size: 2rem;
+            }
+
+            .donations-counter .counter {
+                font-size: 2.5rem;
+            }
+        }
+    </style>
+</head>
+<body>
+  <!-- زر القائمة الجانبية -->
+  <button class="menu-toggle">
+    <i class="fa-solid fa-bars"></i>
+  </button>
+
+  <!-- القائمة الجانبية -->
+  <div class="sidebar" id="sidebar">
+    <div class="sidebar-header">
+      <button class="close-btn" id="close-btn">&times;</button>
+      <img src="logo.jpg" alt="لوغو الجمعية">
+      <h3>سواعد العطاء</h3>
+    </div>
+    <ul class="sidebar-links">
+      <li><a href="index.html"><i class="fa-solid fa-house"></i> الرئيسية</a></li>
+      <li><a href="about.html"><i class="fa-solid fa-users"></i> عن الجمعية</a></li>
+      <li><a href="projects.html"><i class="fa-solid fa-project-diagram"></i> المشاريع</a></li>
+      <li><a href="donations.html"><i class="fa-solid fa-hands-helping"></i> كيف تساعد؟</a></li>
+      <li><a href="help.html"><i class="fa-solid fa-hand-holding-usd"></i> التبرعات</a></li>
+      <li><a href="contact.html"><i class="fa-solid fa-phone"></i> اتصل بنا</a></li>
+    </ul>
+  </div>
+    <!-- البانر -->
+    <div class="hero">
+        <h1>جمعية سواعد العطاء</h1>
+        <p>معًا نُحدث فرقًا! شارك في تقديم العون لمن يحتاجون إليه.</p>
+        <a href="about.html" class="cta-btn">انضم إلينا</a>
+        <a href="help.html" class="cta-btn">تبرع الآن</a>
+    </div>
+
+    <!-- قسم إجمالي التبرعات -->
+    <div class="donations-counter">
+        <h2>إجمالي التبرعات</h2>
+        <div class="counter">150,789 أوقية</div>
+        <p class="verse">"مَن ذَا الَّذِي يُقْرِضُ اللَّهَ قَرْضًا حَسَنًا فَيُضَاعِفَهُ لَهُ أَضْعَافًا كَثِيرَةً"</p>
+    </div>
+    <!-- إضافة الجافا سكريبت -->
+  <script>
+    const menuToggle = document.querySelector('.menu-toggle');
+    const closeBtn = document.getElementById('close-btn');
+    const sidebar = document.getElementById('sidebar');
+    const content = document.getElementById('content');
+
+    menuToggle.addEventListener('click', () => {
+      sidebar.classList.add('active');
+      content.classList.add('sidebar-open');
+    });
+
+    closeBtn.addEventListener('click', () => {
+      sidebar.classList.remove('active');
+      content.classList.remove('sidebar-open');
+    });
+  </script>
+</body>
+</html>

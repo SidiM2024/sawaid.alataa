@@ -1,0 +1,319 @@
+<!DOCTYPE html>
+<html lang="ar">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>عن جمعية سواعد العطاء</title>
+    <!-- تحميل مكتبة Bootstrap 5 لتصميم متجاوب -->
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha1/dist/css/bootstrap.min.css" rel="stylesheet">
+    <!-- تحميل مكتبة أيقونات Font Awesome -->
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css" rel="stylesheet">
+    <style>
+        /* التنسيق الأساسي */
+        body {
+            font-family: 'Arial', sans-serif;
+            background-color: #f4f7fc;
+            margin: 0;
+            padding: 0;
+            overflow-x: hidden;
+            direction: rtl;
+        }
+
+        /* القائمة الجانبية */
+    .sidebar {
+        width: 250px;
+        background-color: #4caf50;
+        color: white;
+        height: 100vh;
+        position: fixed;
+        top: 0;
+        right: 0;
+        transition: transform 0.3s ease-in-out;
+        transform: translateX(100%);
+        z-index: 1000;
+      }
+  
+      .sidebar.active {
+        transform: translateX(0);
+      }
+  
+      .sidebar-header {
+        padding: 20px;
+        background-color: #388e3c;
+        text-align: center;
+        position: relative;
+      }
+  
+      .sidebar-header img {
+        width: 80px;
+        height: auto;
+        border-radius: 50%;
+        margin-bottom: 10px;
+      }
+  
+      .sidebar-header h3 {
+        margin: 0;
+        font-size: 1.2rem;
+      }
+  
+      /* زر الإغلاق */
+      .close-btn {
+        position: absolute;
+        top: 10px;
+        left: 10px;
+        background: none;
+        border: none;
+        color: white;
+        font-size: 1.5rem;
+        cursor: pointer;
+      }
+  
+      .sidebar-links {
+        list-style: none;
+        padding: 0;
+      }
+  
+      .sidebar-links li {
+        padding: 15px 20px;
+        border-bottom: 1px solid rgba(255, 255, 255, 0.1);
+      }
+  
+      .sidebar-links li a {
+        color: white;
+        text-decoration: none;
+        display: flex;
+        align-items: center;
+      }
+  
+      .sidebar-links li a i {
+        margin-left: 10px;
+      }
+  
+      .sidebar-links li:hover {
+        background-color: #2e7d32;
+      }
+  
+      /* زر القائمة */
+      .menu-toggle {
+        position: fixed;
+        top: 15px;
+        right: 15px;
+        background-color: #4caf50;
+        color: white;
+        border: none;
+        padding: 10px;
+        border-radius: 50%;
+        cursor: pointer;
+        z-index: 1100;
+      }
+  
+      .menu-toggle:focus {
+        outline: none;
+      }
+  
+
+        /* تنسيق العنوان */
+        h2, h3 {
+            font-size: 2rem;
+            font-weight: bold;
+            color: #0277bd;
+            text-align: center;
+            margin: 20px 0;
+        }
+
+        /* النصوص الأساسية */
+        p {
+            font-size: 1rem;
+            line-height: 1.8;
+            color: #555;
+            text-align: justify;
+            margin: 0 auto 20px;
+            padding: 0 15px;
+        }
+
+        /* تنسيق الأزرار */
+        .cta-buttons a {
+            padding: 10px 20px;
+            font-size: 1rem;
+            color: #fff;
+            text-decoration: none;
+            border-radius: 8px;
+            display: inline-block;
+            transition: all 0.3s ease;
+        }
+
+        .btn-join {
+            background-color: #0277bd;
+        }
+
+        .cta-buttons a:hover {
+            background-color: #005b99;
+        }
+
+        /* أيقونات */
+        .icon-box {
+            display: flex;
+            justify-content: space-around;
+            margin-top: 20px;
+            flex-wrap: wrap;
+        }
+
+        .icon-box div {
+            text-align: center;
+            margin: 10px;
+            flex: 1 1 100px;
+        }
+
+        .icon-box i {
+            font-size: 3rem;
+            color: #0277bd;
+            margin-bottom: 10px;
+        }
+
+        .icon-box p {
+            font-size: 0.9rem;
+            font-weight: bold;
+            color: #333;
+        }
+
+        /* تحسين العرض للأجهزة الصغيرة */
+        @media (max-width: 768px) {
+            h2, h3 {
+                font-size: 1.5rem;
+            }
+
+            p {
+                font-size: 0.9rem;
+            }
+
+            .icon-box {
+                flex-direction: column;
+                align-items: center;
+            }
+
+            .icon-box div {
+                width: 100%;
+            }
+        }
+
+        /* زر انضم إلينا */
+        .join-btn {
+            background-color: #388e3c;
+            color: white;
+            padding: 12px 20px;
+            border-radius: 8px;
+            font-size: 1.1rem;
+            display: inline-block;
+            text-align: center;
+        }
+
+        .join-btn:hover {
+            background-color: #2b6b2b;
+        }
+    </style>
+</head>
+<body>
+    <!-- زر القائمة الجانبية -->
+  <button class="menu-toggle">
+    <i class="fa-solid fa-bars"></i>
+  </button>
+
+  <!-- القائمة الجانبية -->
+  <div class="sidebar" id="sidebar">
+    <div class="sidebar-header">
+      <button class="close-btn" id="close-btn">&times;</button>
+      <img src="logo.jpg" alt="لوغو الجمعية">
+      <h3>سواعد العطاء</h3>
+    </div>
+    <ul class="sidebar-links">
+      <li><a href="index.html"><i class="fa-solid fa-house"></i> الرئيسية</a></li>
+      <li><a href="about.html"><i class="fa-solid fa-users"></i> عن الجمعية</a></li>
+      <li><a href="projectes.html"><i class="fa-solid fa-project-diagram"></i> المشاريع</a></li>
+      <li><a href="donations.html"><i class="fa-solid fa-hands-helping"></i> كيف تساعد؟</a></li>
+      <li><a href="help.html"><i class="fa-solid fa-hand-holding-usd"></i> التبرعات</a></li>
+      <li><a href="contact.html"><i class="fa-solid fa-phone"></i> اتصل بنا</a></li>
+    </ul>
+  </div>
+
+
+<!-- قسم نبذة عن الجمعية -->
+<section class="about-us">
+    <div class="container">
+        <h2>نبذة عن جمعية سواعد العطاء</h2>
+        <p>
+            تأسست جمعية سواعد العطاء في 1 مارس 2024 على يد 7 من الطلاب بين نساء وشباب. كان أول عمل خيري للجمعية هو سقاية الماء يوم الأحد 10 مارس 2024، قبل يوم من شهر رمضان المبارك. توسعت أنشطتنا لتشمل إفطار الصائمين وتوزيع السلال الغذائية.
+        </p>
+        <div class="cta-buttons text-center">
+            <a href="https://chat.whatsapp.com/FMHiT7D3KE44RQTmib1Rav" class="join-btn">
+                <i class="fas fa-users"></i> انضم إلينا
+            </a>
+        </div>
+    </div>
+</section>
+
+<!-- قسم رؤيتنا -->
+<section class="vision">
+    <div class="container">
+        <h3>رؤيتنا</h3>
+        <p>نطمح إلى بناء مجتمع متعاون ومتعاطف، حيث نعمل على تخفيف معاناة الفقراء والمحتاجين من خلال دعم إنساني يحقق التغيير الإيجابي في حياة الجميع.</p>
+        <div class="icon-box">
+            <div>
+                <i class="fas fa-heart"></i>
+                <p>التعاطف</p>
+            </div>
+            <div>
+                <i class="fas fa-hand-holding-heart"></i>
+                <p>المساعدة</p>
+            </div>
+            <div>
+                <i class="fas fa-people-carry"></i>
+                <p>التعاون</p>
+            </div>
+        </div>
+    </div>
+</section>
+
+<!-- قسم رسالتنا -->
+<section class="mission">
+    <div class="container">
+        <h3>رسالتنا</h3>
+        <p>رسالتنا هي دعم المجتمع بتقديم المساعدات للفئات الأكثر احتياجًا عبر مبادرات خيرية تشمل سقاية الماء، إفطار الصائمين، وتوزيع السلال الغذائية.</p>
+        <div class="icon-box">
+            <div>
+                <i class="fas fa-water"></i>
+                <p>سقاية الماء</p>
+            </div>
+            <div>
+                <i class="fas fa-utensils"></i>
+                <p>إفطار الصائمين</p>
+            </div>
+            <div>
+                <i class="fas fa-box"></i>
+                <p>السلال الغذائية</p>
+            </div>
+        </div>
+    </div>
+</section>
+
+<script>
+    const menuToggle = document.querySelector('.menu-toggle');
+    const closeBtn = document.getElementById('close-btn');
+    const sidebar = document.getElementById('sidebar');
+    const content = document.getElementById('content');
+
+    menuToggle.addEventListener('click', () => {
+      sidebar.classList.add('active');
+      content.classList.add('sidebar-open');
+    });
+
+    closeBtn.addEventListener('click', () => {
+      sidebar.classList.remove('active');
+      content.classList.remove('sidebar-open');
+    });
+  </script>
+
+<!-- تحميل مكتبة Bootstrap JS -->
+<script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.11.6/dist/umd/popper.min.js"></script>
+<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha1/dist/js/bootstrap.min.js"></script>
+</body>
+</html>
