@@ -246,6 +246,127 @@
         <a href="about.html" class="cta-btn">انضم إلينا</a>
         <a href="help.html" class="cta-btn">تبرع الآن</a>
     </div>
+  <!-- نافذة رمضان -->
+<div id="ramadan-popup">
+  <button id="close-popup" onclick="closePopup()">✖</button>
+  <h2>🌙 رمضان على الأبواب!</h2>
+  <p>
+    كن جزءًا من الخير في هذا الشهر المبارك!<br> 
+    انضم إلى جمعية <strong>سواعد العطاء</strong> وساهم معنا في مشاريعنا الإنسانية:
+  </p>
+  <ul>
+    <li>🕌 إفطار الصائم.</li>
+    <li>💧 سقاية الفقراء.</li>
+    <li>🎁 توزيع كسوة العيد.</li>
+  </ul>
+  <p>معًا نصنع الفرق!<br> 
+  <strong>رمضان 2025 هو فرصتك للمشاركة.</strong></p>
+  <a href="https://chat.whatsapp.com/FMHiT7D3KE44RQTmib1Rav" target="_blank" id="join-button">📥 انضم إلينا الآن</a>
+</div>
+
+<style>
+  /* تصميم عصري ومناسب للجميع */
+  #ramadan-popup {
+      position: fixed;
+      top: 50%;
+      left: 50%;
+      transform: translate(-50%, -50%);
+      background: linear-gradient(135deg, #fff7d1, #ffdf80);
+      color: #333;
+      padding: 20px 30px;
+      border-radius: 15px;
+      box-shadow: 0 10px 20px rgba(0, 0, 0, 0.2);
+      text-align: center;
+      z-index: 1000;
+      width: 90%;
+      max-width: 400px;
+      font-family: Arial, sans-serif;
+      animation: popup-animation 0.5s ease-out;
+  }
+
+  /* تأثير الظهور */
+  @keyframes popup-animation {
+      0% {
+          transform: translate(-50%, -60%);
+          opacity: 0;
+      }
+      100% {
+          transform: translate(-50%, -50%);
+          opacity: 1;
+      }
+  }
+
+  #ramadan-popup h2 {
+      color: #333;
+      margin-bottom: 10px;
+      font-size: 1.5em;
+  }
+
+  #ramadan-popup p {
+      font-size: 1em;
+      margin-bottom: 15px;
+      line-height: 1.6;
+  }
+
+  #ramadan-popup ul {
+      list-style: none;
+      padding: 0;
+      margin: 0 0 15px 0;
+  }
+
+  #ramadan-popup ul li {
+      margin: 5px 0;
+      font-size: 1em;
+      color: #555;
+  }
+
+  #join-button {
+      background: #333;
+      color: #fff;
+      text-decoration: none;
+      padding: 10px 20px;
+      font-size: 1em;
+      border-radius: 5px;
+      display: inline-block;
+      transition: background 0.3s;
+      margin-top: 10px;
+  }
+
+  #join-button:hover {
+      background: #555;
+  }
+
+  /* زر الخروج */
+  #close-popup {
+      position: absolute;
+      top: 10px;
+      right: 10px;
+      background: transparent;
+      border: none;
+      font-size: 1.2em;
+      cursor: pointer;
+      color: #555;
+      transition: color 0.3s;
+  }
+
+  #close-popup:hover {
+      color: #333;
+  }
+</style>
+
+<script>
+  // عرض النافذة عند تحميل الصفحة
+  window.onload = function () {
+      const popup = document.getElementById('ramadan-popup');
+      popup.style.display = 'block'; // إظهار النافذة
+  };
+
+  // إخفاء النافذة عند النقر على زر الخروج
+  function closePopup() {
+      const popup = document.getElementById('ramadan-popup');
+      popup.style.display = 'none';
+  }
+</script>
   
 
     <!-- قسم إجمالي التبرعات -->
