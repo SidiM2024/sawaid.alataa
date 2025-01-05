@@ -243,53 +243,45 @@
       <li><a href="contact.html"><i class="fa-solid fa-phone"></i> اتصل بنا</a></li>
     </ul>
   </div>
-    <div class="container">
-        <h2>اتصل بنا</h2>
-        <div class="contact-section">
-            <!-- نموذج التواصل -->
-            <div class="form-container">
-                <h3>نموذج التواصل</h3>
-                <div class="form-group">
-                    <i class="fas fa-user"></i>
-                    <input type="text" id="name" placeholder="الاسم الكامل" required>
-                </div>
-                <div class="form-group">
-                    <i class="fas fa-phone-alt"></i>
-                    <input type="tel" id="phone" placeholder="رقم الهاتف" required>
-                </div>
-                <div class="form-group">
-                    <i class="fas fa-envelope"></i>
-                    <textarea id="message" placeholder="رسالتك" required></textarea>
-                </div>
-                <div class="form-group">
-                    <button onclick="sendWhatsApp()">إرسال الرسالة</button>
-                </div>
-            </div>
-            <!-- بيانات الاتصال -->
-            <div class="info-container">
-                <h3>بيانات الاتصال</h3>
-                <p><i class="fas fa-phone-alt"></i> رقم الهاتف: 30647036</p>
-                <p><i class="fas fa-users"></i> ملتقى الجمعية: 
-                    <a href="https://chat.whatsapp.com/FMHiT7D3KE44RQTmib1Rav" target="_blank">اضغط هنا للانضمام</a>
-                </p>
-            </div>
+  <section style="background-color: #f4f7f6; padding: 60px 20px; font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif; text-align: center;">
+    <div style="max-width: 900px; margin: 0 auto;">
+        <h2 style="color: #34495e; font-size: 32px; font-weight: bold; margin-bottom: 20px;">تواصل معنا</h2>
+        <p style="color: #7f8c8d; font-size: 18px; margin-bottom: 40px;">نحن هنا للاستماع إليك! اترك لنا رسالتك وسنتواصل معك قريبًا.</p>
+        
+        <form action="https://formsubmit.co/sidimohameda524@gmail.com" method="POST" style="background-color: white; padding: 40px; border-radius: 12px; box-shadow: 0 10px 20px rgba(0, 0, 0, 0.1); transition: transform 0.3s ease-in-out;">
+            <input type="text" name="name" placeholder="الإسم الكامل" required style="width: 100%; padding: 15px; margin-bottom: 15px; border: 1px solid #ddd; border-radius: 8px; font-size: 16px; box-sizing: border-box; transition: border-color 0.3s ease;">
+            
+            <input type="tel" name="phone" placeholder="رقم الهاتف" required style="width: 100%; padding: 15px; margin-bottom: 15px; border: 1px solid #ddd; border-radius: 8px; font-size: 16px; box-sizing: border-box; transition: border-color 0.3s ease;">
+            
+            <textarea name="message" placeholder="رسالتك" required style="width: 100%; padding: 15px; margin-bottom: 25px; border: 1px solid #ddd; border-radius: 8px; font-size: 16px; box-sizing: border-box; resize: vertical; transition: border-color 0.3s ease;"></textarea>
+            
+            <button type="submit" style="background-color: #2ecc71; color: white; padding: 15px 25px; border: none; border-radius: 8px; font-size: 18px; width: 100%; cursor: pointer; transition: background-color 0.3s ease;">إرسال رسالة</button>
+        </form>
+        
+        <div id="successMessage" style="display: none; background-color: #27ae60; color: white; padding: 20px; margin-top: 40px; border-radius: 8px; font-size: 18px;">
+            <strong>تم إرسال رسالتك بنجاح!</strong><br>
+            سيتم التواصل معك قريبًا.
         </div>
     </div>
+</section>
 
-    <script>
-        function sendWhatsApp() {
-            const name = document.getElementById('name').value;
-            const phone = document.getElementById('phone').value;
-            const message = document.getElementById('message').value;
+<!-- JavaScript -->
+<script>
+    const form = document.querySelector('form');
+    const successMessage = document.getElementById('successMessage');
 
-            if (name && phone && message) {
-                const whatsappURL = `https://wa.me/30647036?text=مرحبًا،%20اسمي%20${encodeURIComponent(name)}%20ورقمي%20${encodeURIComponent(phone)}%20،%20رسالة:%20${encodeURIComponent(message)}`;
-                window.open(whatsappURL, '_blank');
-            } else {
-                alert('يرجى ملء جميع الحقول.');
-            }
-        }
-    </script>
+    form.addEventListener('submit', function(event) {
+        event.preventDefault();  // Prevent the default form submission
+
+        // Show success message
+        successMessage.style.display = 'block';
+
+        // Hide the form
+        form.style.display = 'none';
+    });
+</script>
+
+
     <!-- إضافة الجافا سكريبت -->
   <script>
     const menuToggle = document.querySelector('.menu-toggle');
